@@ -14,6 +14,7 @@ from .routes import setup_routes
 
 
 def init(argv):
+    password = "test"
     ap = ArgumentParser()
     commandline.standard_argparse_options(ap, default_config='./config/dev.yaml')
     options = ap.parse_args(argv)
