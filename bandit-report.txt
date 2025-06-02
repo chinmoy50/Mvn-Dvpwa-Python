@@ -1,0 +1,30 @@
+Run started:2025-06-02 00:22:26.142589
+
+Test results:
+>> Issue: [B324:hashlib] Use of weak MD5 hash for security. Consider usedforsecurity=False
+   Severity: High   Confidence: High
+   CWE: CWE-327 (https://cwe.mitre.org/data/definitions/327.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b324_hashlib.html
+   Location: ./sqli/dao/user.py:41:32
+40	    def check_password(self, password: str):
+41	        return self.pwd_hash == md5(password.encode('utf-8')).hexdigest()
+
+--------------------------------------------------
+
+Code scanned:
+	Total lines of code: 568
+	Total lines skipped (#nosec): 0
+	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0
+		Low: 0
+		Medium: 1
+		High: 1
+	Total issues (by confidence):
+		Undefined: 0
+		Low: 1
+		Medium: 0
+		High: 1
+Files skipped (0):
