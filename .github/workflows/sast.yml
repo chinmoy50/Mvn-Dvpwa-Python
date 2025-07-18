@@ -34,13 +34,3 @@ jobs:
         else
           echo "No SAST vulnerabilities found."
         fi   
-    
-    
-    - name: Rebuild with Maven     
-      run: mvn clean package
-    
-    - name: Upload artifact      
-      uses: actions/upload-artifact@v3
-      with:
-        name: sast-project-files
-        path: target/*.jar
